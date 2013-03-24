@@ -37,8 +37,17 @@ function minify() {
 	    sed -e "s|/\*[^*]*\*\+\([^/][^*]*\*\+\)*/||g" -e  "s|/\~\(\\\\\)\?\~/|/*\1*/|g" \
 		 -e "s|\s\+| |g" -e "s| \([{;:,]\)|\1|g" -e "s|\([{;:,]\) |\1|g" |\
 		 sed -r "s/\s+=\s+/=/g" > $basename.min.$suffix
+	return 0
 }
 
+echo Looking for files to minify ...
 for i in `find -name "*.css" -o -name "*.js"`; do
+	if ( echo $i|grep "\.min\." >/dev/null ); then
+		# don't minify anything that is minified already
+		continue
+	fi
+	echo minifying $i ...
 	minify $i
 done 
+
+echo Done.

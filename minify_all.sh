@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# @file minify_all.js
+# @file minify_all.sh
 #
 # A shell script that "minifies" all css and js files in the current directory and
 # subdirectories by removing unneeded stuff. The resulting file(s) will have a

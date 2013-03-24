@@ -41,7 +41,7 @@ function minify() {
 }
 
 echo Looking for files to minify ...
-for i in `find -name "*.css" -o -name "*.js"`; do
+for i in `find . -name "*.css" -o -name "*.js"`; do
 	if ( echo $i|grep "\.min\." >/dev/null ); then
 		# don't minify anything that is minified already
 		continue

@@ -5,7 +5,7 @@ A quick and dirty shell script for minifying css and js files.
 
 A shell script that "minifies" all css and js files in the current directory and
 subdirectories by removing unneeded stuff. The resulting file(s) will have a
-.min.js filename. NOTE: This is a poor man's minifier, that well might miss a
+.min.{js,css} filename. NOTE: This is a poor man's minifier, that well might miss a
 few things. Test files after minification!
 
 Usage: $ ./minify_all.sh 
